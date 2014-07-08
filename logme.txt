@@ -1,0 +1,10 @@
+Wed, 25 Jun 2014 08:56:12 +0200: wow Cleanup
+Wed, 25 Jun 2014 08:56:12 +0200: timer array (
+  'a' => 'violet',
+  'b' => 'indigo',
+  'c' => 'blue',
+  'd' => 'green',
+  'e' => 'yellow',
+  'f' => 'orange',
+  'g' => 'red',
+) : 2.950000 ms
