@@ -6,7 +6,8 @@ jQuery(document).ready(function(){
     rules: {
       uname: {
         required: true,
-        minlength: 5
+        minlength: 5,
+        maxlength: 10
       },
       email: {
         required: true,
@@ -15,7 +16,7 @@ jQuery(document).ready(function(){
       },
       password: {
         required: true,
-       // strongPass: true,
+        strongPass: true,
         minlength: 6
       },
       cpassword: {
@@ -95,7 +96,7 @@ jQuery(document).ready(function(){
       },
       'avatar': {
         required: "Please upload avatar",
-        accept: $.validator.format("Please upload avatar with valid( {0} ) extn.")
+    //    accept: $.validator.format("Please upload avatar with valid( {0} ) extn.")
       }
     }
   })

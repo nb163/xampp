@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>D:\itbs\nb163\try\js\validate\register.js</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.22" />
+	<meta name="date" content="2014-07-15T11:22:32" />
+	<style type="text/css">
+	body
+	{
+		font-family: Monospace, monospace;
+		font-size: 10pt;
+	}
+	.style_0
+	{
+		color: #000000;
+		background-color: #ffffff;
+	}
+	.style_2
+	{
+		color: #d00000;
+		background-color: #ffffff;
+	}
+	.style_4
+	{
+		color: #007f00;
+		background-color: #ffffff;
+	}
+	.style_5
+	{
+		color: #00007f;
+		background-color: #ffffff;
+		font-weight: bold;
+	}
+	.style_6
+	{
+		color: #ff8000;
+		background-color: #ffffff;
+	}
+	.style_7
+	{
+		color: #ff8000;
+		background-color: #ffffff;
+	}
+	.style_10
+	{
+		color: #301010;
+		background-color: #ffffff;
+	}
+	.style_11
+	{
+		color: #000000;
+		background-color: #ffffff;
+	}
+
+	</style>
+</head>
+
+<body>
+<p>
+<span class="style_11">jQuery</span><span class="style_10">(</span><span class="style_11">document</span><span class="style_10">).</span><span class="style_11">ready</span><span class="style_10">(</span><span class="style_5">function</span><span class="style_10">(){</span><br />
+<br />
+<br />
+<span class="style_2">//&nbsp;validate&nbsp;signup&nbsp;form&nbsp;on&nbsp;keyup&nbsp;and&nbsp;submit///////</span><br />
+&nbsp;&nbsp;<span class="style_11">$</span><span class="style_10">(</span><span class="style_6">"#signupForm"</span><span class="style_10">).</span><span class="style_11">validate</span><span class="style_10">({</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">rules</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">uname</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;</span><span class="style_4">5</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">maxlength</span><span class="style_10">:&nbsp;</span><span class="style_4">10</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">email</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">//&nbsp;remote:'ajax/email.php',</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">email</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">password</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">strongPass</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;</span><span class="style_4">6</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">cpassword</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">equalTo</span><span class="style_10">:&nbsp;</span><span class="style_7">'#passwordId'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">dob</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">gender</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">address</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;</span><span class="style_4">10</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">country_id</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">'lang[]'</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;</span><span class="style_4">2</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">'hobbies[]'</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;</span><span class="style_4">2</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">'captcha'</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">'avatar'</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_5">true</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">accept</span><span class="style_10">:&nbsp;</span><span class="style_7">'image/jpeg|image/png'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">}</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">messages</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">uname</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"User&nbsp;name&nbsp;is&nbsp;required"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;</span><span class="style_6">"Name&nbsp;should&nbsp;be&nbsp;{0}&nbsp;character&nbsp;long"</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">email</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Email&nbsp;is&nbsp;required"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">remote</span><span class="style_10">:&nbsp;</span><span class="style_6">"Email&nbsp;already&nbsp;exists"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">email</span><span class="style_10">:&nbsp;</span><span class="style_6">"Please&nbsp;enter&nbsp;valid&nbsp;email&nbsp;id"</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">password</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Password&nbsp;is&nbsp;required"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;</span><span class="style_11">$</span><span class="style_10">.</span><span class="style_11">validator</span><span class="style_10">.</span><span class="style_11">format</span><span class="style_10">(</span><span class="style_6">"Password&nbsp;should&nbsp;be&nbsp;{0}&nbsp;character&nbsp;long"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">cpassword</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Confirm&nbsp;Password&nbsp;is&nbsp;required"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">equalTo</span><span class="style_10">:&nbsp;</span><span class="style_7">'Please&nbsp;enter&nbsp;same&nbsp;password&nbsp;again'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">dob</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Date&nbsp;of&nbsp;birth&nbsp;is&nbsp;required"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">gender</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Please&nbsp;select&nbsp;gender"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">address</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Address&nbsp;is&nbsp;required"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;(</span><span class="style_6">"Address&nbsp;should&nbsp;be&nbsp;{0}&nbsp;character&nbsp;long"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">country_id</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Please&nbsp;select&nbsp;country"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">'lang[]'</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Please&nbsp;select&nbsp;some&nbsp;languages"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;(</span><span class="style_6">"Please&nbsp;select&nbsp;atleast&nbsp;{0}&nbsp;languages"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">'hobbies[]'</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Please&nbsp;select&nbsp;some&nbsp;hobbies"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">minlength</span><span class="style_10">:&nbsp;(</span><span class="style_6">"Please&nbsp;select&nbsp;atleast&nbsp;{0}&nbsp;hobbies"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">'captcha'</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Please&nbsp;enter&nbsp;security&nbsp;code."</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">},</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">'avatar'</span><span class="style_10">:&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">required</span><span class="style_10">:&nbsp;</span><span class="style_6">"Please&nbsp;upload&nbsp;avatar"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_2">//&nbsp;&nbsp;&nbsp;&nbsp;accept:&nbsp;$.validator.format("Please&nbsp;upload&nbsp;avatar&nbsp;with&nbsp;valid(&nbsp;{0}&nbsp;)&nbsp;extn.")</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">}</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">}</span><br />
+&nbsp;&nbsp;<span class="style_10">})</span><br />
+<span class="style_2">//////////////////////////////////////////////////////</span><br />
+<br />
+<br />
+<span class="style_10">})</span><br />
+
+</p>
+</body>
+</html>
