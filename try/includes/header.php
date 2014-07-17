@@ -1,3 +1,7 @@
+<?php
+  require_once("./includes/db.php");
+  require_once("./includes/common_functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,4 +62,6 @@
       <div class="row">
 <?php
 require_once("./includes/left_menu.php");
-?>
+
+
+

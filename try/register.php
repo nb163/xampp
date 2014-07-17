@@ -1,14 +1,14 @@
 <?php
 require_once("./includes/header.php");
+require_once("./includes/left_menu.php");
 ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 <!------------------------FORM START ------------------------------------>
 <?php
-  echo '<pre>';
-  //print_r($_POST);
-  //print_r($_FILES);
-  echo '</pre>';
+  pr($_POST);
+  pr1($_FILES);
+
 ?>
 <form id="signupForm" enctype="multipart/form-data" method="post" class="form-horizontal" role="form">
 
