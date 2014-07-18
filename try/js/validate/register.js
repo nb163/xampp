@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
       uname: {
         required: true,
         minlength: 5,
-        maxlength: 10
+        maxlength: 100
       },
       email: {
         required: true,

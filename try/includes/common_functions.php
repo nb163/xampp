@@ -3,9 +3,14 @@
   $debug = true;
   $debugArray = array();
 
-
+  # css for <pre> is already defined in css/site.css
   #pre{color:#fff;background-color: #000;font-size:20px;border-radius:10px;box-shadow:10px 10px 10px gray;padding:10px;}
 
+
+  /***
+   * Used to print Array as Debug Msg
+   * @param $arr Array
+   * ***/
   function pr($arr = array())
   {
       global $debugArray;
