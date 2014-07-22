@@ -58,3 +58,9 @@
     }
     return $printMsg;
   }
+
+  function getStatus($status=0)
+  {
+    return $status == 0 ? 'Inactive' : 'Active';
+  }
+
