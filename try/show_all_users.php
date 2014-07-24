@@ -1,15 +1,44 @@
 <?php
 require_once("./includes/header.php");
 require_once("./includes/left_menu.php");
+#ALTER TABLE `users` ADD `avatar` VARCHAR(255) NOT NULL ;
 ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">All Users</h1>
 <!------------------------FORM START ------------------------------------>
 <?php
 
+  # Delete Records
+  if(isset($_GET['action']) && ($_GET['action']=='delete'))
+  {
+    $id = (isset($_GET['id']) && !empty($_GET['id'])) ? $_GET['id'] : 0;
+
+    $deleteQuery = "DELETE FROM `users`
+                    WHERE `id`='$id'";
+    mysql_query($deleteQuery);
+    if(mysql_affected_rows() == 1){
+      echo "<h4>Record Deleted Successfully</h4>";
+    }
+
+  }
+
+  # Update Status
+  if(isset($_GET['status']) && ($_GET['status']!=''))
+  {
+    $newStatus = $_GET['status']==1 ? 0 : 1;
+
+    $id = (isset($_GET['id']) && !empty($_GET['id'])) ? $_GET['id'] : 0;
+
+    $updateQuery = "UPDATE `users` SET `status`='$newStatus'
+                    WHERE `id`='$id'";
+    mysql_query($updateQuery);
+    if(mysql_affected_rows() == 1){
+      echo "<h4>Status Updated Successfully</h4>";
+    }
+
+  }
   $selectQuery = "SELECT * FROM `users`";
   $selectResult = mysql_query($selectQuery) or die(mysql_error());
-
 
 ?>
 
@@ -22,6 +51,7 @@ require_once("./includes/left_menu.php");
       <th>Added Date</th>
       <th>Modified Date</th>
       <th>Status</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -29,14 +59,24 @@ require_once("./includes/left_menu.php");
 while($user = mysql_fetch_assoc($selectResult))
 {
   pr($user);
+  $status = $user['status'];
+  $id = $user['id'];
 ?>
     <tr>
-      <td ><?=$user['id']?></td>
+      <td ><?=$id?></td>
       <td ><?=$user['uname']?></td>
       <td ><a href="mailto:<?=$user['email']?>"><?=$user['email']?></a></td>
       <td ><?=date('d-M-Y',strtotime($user['added_date']))?></td>
-      <td ><?=date('d-M-Y',strtotime($user['modified_date']))?></td>
-      <td ><?=getStatus($user['status'])?></td>
+      <td >
+
+        <a href="./uploads/<?=($user['avatar'])?>"
+        target="_blank">
+        <img height="90" width="120" src="./uploads/<?=($user['avatar'])?>">
+        </a>
+
+      </td>
+      <td ><a href="show_all_users.php?id=<?=$id?>&status=<?=$status?>"><?=getStatus($status)?></a></td>
+      <td ><a onClick="return confirm('Are you sure ?')" href="show_all_users.php?id=<?=$id?>&action=delete">Delete</a></td>
     </tr>
 <?php
 } //end while

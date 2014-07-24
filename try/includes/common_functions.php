@@ -2,6 +2,7 @@
 
   $debug = true;
   $debugArray = array();
+  date_default_timezone_set('Asia/Kolkata');
 
   # css for <pre> is already defined in css/site.css
   #pre{color:#fff;background-color: #000;font-size:20px;border-radius:10px;box-shadow:10px 10px 10px gray;padding:10px;}

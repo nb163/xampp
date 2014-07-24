@@ -5,13 +5,27 @@ require_once("./includes/left_menu.php");
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 <!------------------------FORM START ------------------------------------>
-<?
+<?php
 
-  //pr1($_FILES);
+  pr1($_POST);
+  pr1($_FILES);
   if(isset($_POST['email']) && !empty($_POST['email'])) {
     unset($_POST['cpassword']);
     $_POST['added_date'] = date('Y-m-d H:i:s');
     $_POST['status'] = '1';
+
+    ################# uppload avatar start ############
+      if(isset($_FILES['avatar']) && $_FILES['avatar']['error']==0){
+
+        $fileName = date('dmYHis').'_'.uniqid().'_'.$_FILES['avatar']['name'];
+        $src = $_FILES['avatar']['tmp_name'];
+        $dest = "./uploads/$fileName";
+        if(is_uploaded_file($src)){
+          move_uploaded_file($src, $dest);
+          $_POST['avatar'] = $fileName;
+        }
+      }
+    ####################################################
 
     $id = insert('users', $_POST);
 
