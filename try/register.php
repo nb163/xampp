@@ -13,7 +13,7 @@ require_once("./includes/left_menu.php");
     unset($_POST['cpassword']);
     $_POST['added_date'] = date('Y-m-d H:i:s');
     $_POST['status'] = '1';
-
+    $_POST['hobbies'] = implode(',',$_POST['hobbies']);
     ################# uppload avatar start ############
       if(isset($_FILES['avatar']) && $_FILES['avatar']['error']==0){
 
@@ -58,6 +58,18 @@ require_once("./includes/left_menu.php");
     <label class="col-sm-2 control-label">Confirm Password</label>
     <div class="col-sm-6">
       <input type="password" value="1q1q@1q1q" class="form-control" name="cpassword" placeholder="Confirm Password">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Hobbies</label>
+    <div class="col-sm-6">
+      <input type="checkbox" value="cr"  name="hobbies[]">Cricket<br>
+      <input type="checkbox" value="hk"  name="hobbies[]">Hockey<br>
+      <input type="checkbox" value="fb"  name="hobbies[]">FootBall<br>
+      <input type="checkbox" value="tn"  name="hobbies[]">Tennnis<br>
+      <input type="checkbox" value="ch" name="hobbies[]">Chess<br>
+      <input type="checkbox" value="sw" name="hobbies[]">Swimming<br>
     </div>
   </div>
 

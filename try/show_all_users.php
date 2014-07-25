@@ -2,6 +2,7 @@
 require_once("./includes/header.php");
 require_once("./includes/left_menu.php");
 #ALTER TABLE `users` ADD `avatar` VARCHAR(255) NOT NULL ;
+#ALTER TABLE `users` ADD `hobbies` VARCHAR(255) NOT NULL ;
 ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">All Users</h1>
@@ -37,7 +38,7 @@ require_once("./includes/left_menu.php");
     }
 
   }
-  $selectQuery = "SELECT * FROM `users`";
+  $selectQuery = "SELECT * FROM `users` ORDER BY `added_date` DESC";
   $selectResult = mysql_query($selectQuery) or die(mysql_error());
 
 ?>
@@ -76,7 +77,11 @@ while($user = mysql_fetch_assoc($selectResult))
 
       </td>
       <td ><a href="show_all_users.php?id=<?=$id?>&status=<?=$status?>"><?=getStatus($status)?></a></td>
-      <td ><a onClick="return confirm('Are you sure ?')" href="show_all_users.php?id=<?=$id?>&action=delete">Delete</a></td>
+      <td >
+        <a onClick="return confirm('Are you sure ?')" href="show_all_users.php?id=<?=$id?>&action=delete">Delete</a> /
+        <a href="edit_user.php?id=<?=$id?>">Edit</a>
+
+      </td>
     </tr>
 <?php
 } //end while
