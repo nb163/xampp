@@ -21,3 +21,5 @@
 # SET 4
  die( "Hello 4");
  echo "World";
+
+ echo "World";
