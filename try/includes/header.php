@@ -1,6 +1,10 @@
 <?php
   require_once("./includes/db.php");
   require_once("./includes/common_functions.php");
+  //print_r($_SESSION);
+  if(!isset($_SESSION['id']) || empty($_SESSION['id'])) {
+      header('location:index.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +53,7 @@
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a href="logout.php">Logout</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">

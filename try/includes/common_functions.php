@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   $debug = true;
   $debugArray = array();
   date_default_timezone_set('Asia/Kolkata');

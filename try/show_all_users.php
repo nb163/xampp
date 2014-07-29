@@ -3,6 +3,7 @@ require_once("./includes/header.php");
 require_once("./includes/left_menu.php");
 #ALTER TABLE `users` ADD `avatar` VARCHAR(255) NOT NULL ;
 #ALTER TABLE `users` ADD `hobbies` VARCHAR(255) NOT NULL ;
+
 ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">All Users</h1>

@@ -12,6 +12,7 @@ require_once("./includes/left_menu.php");
   if(isset($_POST['email']) && !empty($_POST['email'])) {
     unset($_POST['cpassword']);
     $_POST['added_date'] = date('Y-m-d H:i:s');
+    $_POST['password'] = md5($_POST['password']);
     $_POST['status'] = '1';
     $_POST['hobbies'] = implode(',',$_POST['hobbies']);
     ################# uppload avatar start ############
@@ -28,6 +29,9 @@ require_once("./includes/left_menu.php");
     ####################################################
 
     $id = insert('users', $_POST);
+    if($id){
+      header("location:show_all_users.php");
+    }
 
   }
 ?>
@@ -64,12 +68,12 @@ require_once("./includes/left_menu.php");
   <div class="form-group">
     <label class="col-sm-2 control-label">Hobbies</label>
     <div class="col-sm-6">
-      <input type="checkbox" value="cr"  name="hobbies[]">Cricket<br>
-      <input type="checkbox" value="hk"  name="hobbies[]">Hockey<br>
-      <input type="checkbox" value="fb"  name="hobbies[]">FootBall<br>
-      <input type="checkbox" value="tn"  name="hobbies[]">Tennnis<br>
-      <input type="checkbox" value="ch" name="hobbies[]">Chess<br>
-      <input type="checkbox" value="sw" name="hobbies[]">Swimming<br>
+     <label> <input type="checkbox" value="cr"  name="hobbies[]">Cricket</label><br>
+      <label><input type="checkbox" value="hk"  name="hobbies[]">Hockey</label><br>
+      <label><input type="checkbox" value="fb"  name="hobbies[]">FootBall</label><br>
+      <label><input type="checkbox" value="tn"  name="hobbies[]">Tennnis</label><br>
+      <label><input type="checkbox" value="ch" name="hobbies[]">Chess</label><br>
+      <label><input type="checkbox" value="sw" name="hobbies[]">Swimming</label><br>
     </div>
   </div>
 
