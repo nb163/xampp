@@ -29,7 +29,15 @@ if(isset($_POST['sbmt']))
       $_SESSION['id'] = $user['id'];
       $_SESSION['name'] =$user['uname'];
       $_SESSION['email'] =$user['email'];
-
+/**************************/
+if(isset($_POST['remember'])){
+  setcookie('email',$_POST['email'],time()+30);
+  setcookie('password',$_POST['password'],time()+30);
+} else {
+  setcookie('email',$_POST['email'],time()-30);
+  setcookie('password',$_POST['password'],time()-30);
+}
+/**************************/
       header('location:show_all_users.php');
 
     } else {
@@ -78,10 +86,10 @@ if(isset($_POST['sbmt']))
 
       <form class="form-signin" method="post" role="form">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" name="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <input type="text" name="email" value="<?=@$_COOKIE['email']?>" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" name="password" value="<?=@$_COOKIE['password']?>" class="form-control" placeholder="Password" required>
         <label class="checkbox">
-          <input type="checkbox" name="remember"  value="remember-me"> Remember me
+          <input type="checkbox" checked name="remember"  value="remember-me"> Remember me
         </label>
         <input class="btn btn-lg btn-primary btn-block" name="sbmt" value="Sign in" type="submit">
       </form>

@@ -56,7 +56,7 @@
             <li><a href="logout.php">Logout</a></li>
           </ul>
           <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
+            <input name="search" type="text" class="form-control" placeholder="Search...">
           </form>
         </div>
       </div>

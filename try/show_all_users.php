@@ -39,7 +39,16 @@ require_once("./includes/left_menu.php");
     }
 
   }
-  $selectQuery = "SELECT * FROM `users` ORDER BY `added_date` DESC";
+
+  $where = '';
+  if(isset($_GET['search']) && !empty($_GET['search'])){
+    $search = trim($_GET['search']);
+    $where = " WHERE `email` LIKE '%$search%' OR
+    `uname` LIKE '%$search%' ";
+  }
+
+  $selectQuery = "SELECT * FROM `users` $where ORDER BY `added_date` DESC";
+  pr1($selectQuery);
   $selectResult = mysql_query($selectQuery) or die(mysql_error());
 
 ?>
