@@ -1,0 +1,12 @@
+Line By Line
+fgets() and fputs()
+
+Complete File
+file_get_contents()
+file_put_contents()
+
+CSV (Comma Seperated value)
+fputcsv()
+fgetcsv()
+
+
